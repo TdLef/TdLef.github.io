@@ -4,6 +4,15 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width",initial-scale="1.0"/>
     <title>Tkのホームページ</title>
+
+    <script type="module">
+        import init, { start_app } from './pkg/bevy_wasm.js';
+        async function run() {
+            await init();
+            start_app();
+        }
+        run();
+    </script>
     
     <!-- CSSリンク部 -->
     <link rel="stylesheet" href="./css/style.css">
@@ -15,6 +24,8 @@
             <h1 class="main-heading">Tkのホームページ</h1>
             <div id="greeting"></div>
             <button onClick="buttonClicked()">ボタン</button>
+
+            <canvas id="bevy_canvas"></canvas>
         </div>
         <div class="footer">
             footer
